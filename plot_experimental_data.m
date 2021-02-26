@@ -57,12 +57,12 @@ function plot_experimental_data(sampleData)
     plot(time, y(3,:), time, xset(3,:));
     title('Yaw')
     xlabel('Time (s)')
-    ylabel('Yaw')
+    ylabel('Yaw (rad)')
     legend('Real position', 'Demanded Position');
     grid minor
     
     set(gcf);
-    path = strcat(strcat('C:\Users\Patrick\projects\le_data\plots\reg\Position_result.png'));
+    path = strcat(strcat('C:\Users\Patrick\projects\le_data\dp-experimental-data-plots\plots\reg\Position_result.png'));
     saveas(gcf, path);
     
     %% Force Plots
@@ -87,14 +87,14 @@ function plot_experimental_data(sampleData)
     
     subplot(3,1,3)
     plot(time, force(3,:), time, projected_force(3,:))
-    title('Control force - Yaw')
+    title('Control moment - Yaw')
     xlabel('Time (s)')
-    ylabel('Force (N)')
+    ylabel('Moment (Nm)')
     legend('Demanded Force', 'Actual Force')
     grid minor
     
     set(gcf);
-    path = strcat(strcat('C:\Users\Patrick\projects\le_data\plots\reg\Force_result.png'));
+    path = strcat(strcat('C:\Users\Patrick\projects\le_data\dp-experimental-data-plots\plots\reg\Force_result.png'));
     saveas(gcf, path);
     
     %% Rotation Plots
@@ -102,7 +102,7 @@ function plot_experimental_data(sampleData)
     
     subplot(3,1,1)
     plot(time, demanded_rotation(1,:), time, effective_rotation(1,:));
-    title('Rotation - Azimute 1')
+    title('Rotation - Azimuth 1')
     xlabel('Time (s)')
     % qual a unidade
     ylabel('Rotation (rpm)')
@@ -111,7 +111,7 @@ function plot_experimental_data(sampleData)
     
     subplot(3,1,2)
     plot(time, demanded_rotation(2,:), time, effective_rotation(2,:));
-    title('Rotation - Azimute 2')
+    title('Rotation - Azimuth 2')
     xlabel('Time (s)')
     % qual a unidade
     ylabel('Rotation (rpm)')
@@ -120,7 +120,7 @@ function plot_experimental_data(sampleData)
     
     subplot(3,1,3)
     plot(time, demanded_rotation(3,:), time, effective_rotation(3,:));
-    title('Rotation - Proa')
+    title('Rotation - Bow')
     xlabel('Time (s)')
     % qual a unidade
     ylabel('Rotation (rpm)')
@@ -128,7 +128,7 @@ function plot_experimental_data(sampleData)
     grid minor
     
     set(gcf);
-    path = strcat(strcat('C:\Users\Patrick\projects\le_data\plots\reg\Rotation_result.png'));
+    path = strcat(strcat('C:\Users\Patrick\projects\le_data\dp-experimental-data-plots\plots\reg\Rotation_result.png'));
     saveas(gcf, path);
     
     %% Thrust Plots
@@ -136,7 +136,7 @@ function plot_experimental_data(sampleData)
     
     subplot(3,1,1)
     plot(time, demanded_thrust(1,:), time, effective_thrust(1,:));
-    title('Thrust - Azimute 1')
+    title('Thrust - Azimuth 1')
     xlabel('Time (s)')
     % qual a unidade
     ylabel('Thrust (N)')
@@ -145,7 +145,7 @@ function plot_experimental_data(sampleData)
     
     subplot(3,1,2)
     plot(time, demanded_thrust(2,:), time, effective_thrust(2,:));
-    title('Thrust - Azimute 2')
+    title('Thrust - Azimuth 2')
     xlabel('Time (s)')
     % qual a unidade
     ylabel('Thrust (N)')
@@ -154,7 +154,7 @@ function plot_experimental_data(sampleData)
     
     subplot(3,1,3)
     plot(time, demanded_thrust(3,:), time, effective_thrust(3,:));
-    title('Rotation - Proa')
+    title('Thrust - Bow')
     xlabel('Time (s)')
     % qual a unidade
     ylabel('Thrust (N)')
@@ -162,35 +162,35 @@ function plot_experimental_data(sampleData)
     grid minor
     
     set(gcf);
-    path = strcat(strcat('C:\Users\Patrick\projects\le_data\plots\reg\Thrust_result.png'));
+    path = strcat(strcat('C:\Users\Patrick\projects\le_data\dp-experimental-data-plots\plots\reg\Thrust_result.png'));
     saveas(gcf, path);
     
     %% Angle
     plot_fig = figure('visible', 'off');
     subplot(3,1,1)
     plot(time, demanded_angle(1,:), time, effective_angle(1,:));
-    title('Angle - Azimute 1')
+    title('Thruster revolution - Azimuth 1')
     xlabel('Time (s)')
-    ylabel('Angle')
+    ylabel('Angle (degree)')
     legend('Demanded Angle', 'Effective Angle');
     grid minor
     
     subplot(3,1,2)
     plot(time, demanded_angle(2,:), time, effective_angle(2,:));
-    title('Thrust - Azimute 2')
+    title('Thruster revolution - Azimuth 2')
     xlabel('Time (s)')
-    ylabel('Angle')
+    ylabel('Angle (degree)')
     legend('Demanded Angle', 'Effective Angle');
     grid minor
     
     subplot(3,1,3)
     plot(time, demanded_angle(3,:), time, effective_angle(3,:));
-    title('Rotation - Proa')
+    title('Thruster revolution - Bow')
     xlabel('Time (s)')
-    ylabel('Angle')
+    ylabel('Angle (degree)')
     legend('Demanded Angle', 'Effective Angle');
     grid minor
     
     set(gcf);
-    path = strcat(strcat('C:\Users\Patrick\projects\le_data\plots\reg\Angle_result.png'));
+    path = strcat(strcat('C:\Users\Patrick\projects\le_data\dp-experimental-data-plots\plots\reg\Angle_result.png'));
     saveas(gcf, path);
